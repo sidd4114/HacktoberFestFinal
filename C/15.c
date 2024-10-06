@@ -33,6 +33,33 @@
 // 1 <= prices.length <= 3 * 10^4
 // 0 <= prices[i] <= 10^4
 
+#include <stdio.h>
+
 int maxProfit(int* prices, int pricesSize) {
+
+    int profit = 0;
+
+    for(int i = 0; i < pricesSize - 1; i++){
+
+        if(prices[i + 1] > prices[i]){
+
+            profit += prices[i+1] - prices[i];
+        }
+
+        //printf("Profit = %i",profit);
+    }
+
+    return profit;
     
+}
+
+int main(){
+
+    int prices[] = {7,6,4,3,1};
+
+    int size = sizeof(prices)/sizeof(prices[0]);
+
+    printf("%i",maxProfit(prices,size));
+
+    return 0;
 }
