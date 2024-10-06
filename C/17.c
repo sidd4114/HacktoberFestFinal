@@ -29,6 +29,46 @@
 // 1 <= n <= 2 * 104
 // 0 <= ratings[i] <= 2 * 10^4
 
-int candy(int* ratings, int ratingsSize) {
-    
+#include<stdio.h>
+
+int candies(int* ratings, int ratingSize)
+{
+   int candies[ratingSize];
+   for(int i=0;i<ratingSize;i++)
+{
+    candies[i] = 1;
+}
+
+  for(int i=1;i<ratingSize;i++)
+  {
+    if(ratings[i]>ratings[i-1])
+    {
+        candies[i] = candies[i-1] + 1;
+    }
+  }
+
+  for(int i=ratingSize - 2; i>=0 ; i--)
+  {
+    if(ratings[i]>ratings[i+1])
+       candies[i] = candies[i+1] + 1;
+  }
+  
+  int candiesSum=0;
+  for(int i=0; i<ratingSize; i++)
+  {
+     candiesSum += candies[i];
+  }
+return candiesSum;
+
+}
+
+
+
+int main()
+{
+    int rating[] = {1,2,2};
+    int size = (sizeof(rating)/sizeof(rating[0]));
+    int results = candies(rating,size);
+    printf("%d",size);
+    printf("the output is %d", results);
 }
