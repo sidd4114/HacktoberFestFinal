@@ -27,12 +27,18 @@ class Solution(object):
         :type coordinates: List[List[int]]
         :rtype: bool
         """
+        for co in range (len(coordinates)-1):
+            if coordinates[co+1][0]!=coordinates[co][1]:
+             return False
+        return True
+
         
         
-        
-        
-        
-        
+i1 = [[1,2],[2,3],[3,4],[4,5],[5,6],[6,7]]
+i2 = [[1,1],[2,2],[3,4],[4,5],[5,6],[7,7]]
+obj=Solution ()
+print(obj.checkStraightLine(i1))        
+print(obj.checkStraightLine(i2))        
         
         
         
