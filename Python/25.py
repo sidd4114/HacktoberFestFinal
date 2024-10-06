@@ -58,10 +58,30 @@ class Solution(object):
         :type word: str
         :rtype: bool
         """
+        vowel=['a','e','i','o','u','A','E','I','O','U']
+        cons=['b','c','d','g','f','h','j','k','l','m','n','p','q','r','s','t','v','w','x','y','z','B','C','D','F','G','H','J','K','L','M','N','P','Q','R','S','T','V','W','X','Y','Z']
+        digit=['0','1','2','3','4','5','6','7','8','9']
+        if len(word)<=3:
+            return False
+        for i in word:
+            if i in vowel:
+                pass
+            if i in cons:
+                pass
+            if i in digit:
+                return True
+            else:
+                return False
         
         
-        
-        
+obj=Solution()
+
+i1="234Adas"
+i2="b3"
+i3="a3$e"
+print(obj.isValid(i1))
+print(obj.isValid(i2))
+print(obj.isValid(i3))        
         
         
         
